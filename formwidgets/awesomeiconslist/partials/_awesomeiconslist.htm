@@ -1,0 +1,16 @@
+<select
+		class = "form-control custom-select"
+		id="<?= $field->getId(); ?>"
+		name="<?= $field->getName(); ?>"
+>
+	<option data-icon="fas fa-ad">Alpha</option>
+	<option data-icon="fas fa-ad">Bravo</option>
+	<option data-icon="fas fa-ad">Charlie</option>
+	<option data-icon="fas fa-ad">Delta</option>
+</select>
+
+<?php if (!empty($unicodeValue)): ?>
+	<?= $this->makePartial('classoptions'); ?>
+<? else: ?>
+    <?= $this->makePartial('unicodeoptions'); ?>
+<? endif; ?>

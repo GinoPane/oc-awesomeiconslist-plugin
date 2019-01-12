@@ -1,0 +1,26 @@
+{
+  "name": "ginopane/oc-awesomeiconslist-plugin",
+  "type": "october-plugin",
+  "description": "The latest font awesome icons list as a backed form widget",
+  "homepage": "https://github.com/GinoPane/oc-awesomeiconslist-plugin",
+  "keywords": ["october", "cms", "plugin", "icon", "icons", "font awesome", "gino pane"],
+  "authors": [
+    {
+      "name": "Siarhei <Gino Pane> Karavai",
+      "homepage": "http://sergey.karavay.name",
+      "role": "Developer"
+    }
+  ],
+  "require-dev": {
+    "squizlabs/php_codesniffer": "^3.0",
+    "phpmd/phpmd" : "^2.6"
+  },
+  "scripts": {
+    "psr2check": [
+      "@php vendor/bin/phpcs --standard=PSR2 src/"
+    ],
+    "psr2autofix": [
+      "@php vendor/bin/phpcbf --standard=PSR2 src/"
+    ]
+  }
+}

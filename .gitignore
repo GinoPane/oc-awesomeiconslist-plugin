@@ -1,0 +1,8 @@
+# Project specific
+/vendor
+composer.lock
+
+# Environment specific
+.idea
+
+/formwidgets/awesomeiconslist/bin/
