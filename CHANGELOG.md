@@ -16,7 +16,7 @@ Types of changes
 
 ## [Unreleased]
 
-## 1.0.0 - 
+## 1.0.0 - 2013-01-13
 
 ### Features
 * The initial release of Awesome Icons List.
