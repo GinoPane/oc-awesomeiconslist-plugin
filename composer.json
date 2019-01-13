@@ -1,7 +1,7 @@
 {
   "name": "ginopane/oc-awesomeiconslist-plugin",
   "type": "october-plugin",
-  "description": "The latest font awesome icons list as a backed form widget",
+  "description": "The latest Font Awesome icons list as a backed form widget",
   "homepage": "https://github.com/GinoPane/oc-awesomeiconslist-plugin",
   "keywords": ["october", "cms", "plugin", "icon", "icons", "font awesome", "gino pane"],
   "authors": [

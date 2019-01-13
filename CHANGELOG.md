@@ -16,7 +16,12 @@ Types of changes
 
 ## [Unreleased]
 
-## 1.0.0 - 2013-01-13
+## 1.1.0 - 2019-01-13
+
+### Removed
+* Removed bin directory.
+
+## 1.0.0 - 2019-01-13
 
 ### Features
 * The initial release of Awesome Icons List.
