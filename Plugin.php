@@ -23,7 +23,7 @@ class Plugin extends PluginBase
      *
      * @return  array
      */
-    public function pluginDetails()
+    public function pluginDetails(): array
     {
         return [
             'name'        => self::LOCALIZATION_KEY . 'plugin.name',
