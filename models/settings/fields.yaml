@@ -1,0 +1,28 @@
+fields:
+    section_title:
+        label: 'ginopane.awesomeiconslist::lang.settings.name'
+        span: left
+        type: section
+    fontawesome_link:
+        label: 'ginopane.awesomeiconslist::lang.settings.fontawesome_link'
+        span: left
+        placeholder: 'ginopane.awesomeiconslist::lang.settings.fontawesome_link_placeholder'
+        type: text
+    fontawesome_link_attributes:
+        label: 'ginopane.awesomeiconslist::lang.settings.fontawesome_link_attributes'
+        type: repeater
+        prompt: 'ginopane.awesomeiconslist::lang.settings.fontawesome_link_attributes_prompt'
+        span: left
+        form:
+            fields:
+                attribute:
+                    label: 'ginopane.awesomeiconslist::lang.settings.fontawesome_link_attributes_attribute'
+                    placeholder: 'ginopane.awesomeiconslist::lang.settings.fontawesome_link_attributes_attribute_placeholder'
+                    type: text
+                    span: left
+
+                value:
+                    label: 'ginopane.awesomeiconslist::lang.settings.fontawesome_link_attributes_value'
+                    placeholder: 'ginopane.awesomeiconslist::lang.settings.fontawesome_link_attributes_value_placeholder'
+                    type: text
+                    span: right

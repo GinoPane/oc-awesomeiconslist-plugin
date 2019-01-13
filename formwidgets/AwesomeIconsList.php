@@ -3,6 +3,7 @@
 namespace GinoPane\AwesomeIconsList\FormWidgets;
 
 use Backend\Classes\FormWidgetBase;
+use GinoPane\AwesomeIconsList\Models\Settings;
 
 /**
  * Awesome Icons List Form Widget
@@ -17,6 +18,16 @@ class AwesomeIconsList extends FormWidgetBase
     public $unicodeValue = false;
 
     /**
+     * @var string Placeholder when no icon is selected
+     */
+    public $placeholder = '';
+
+    /**
+     * @var string Add empty option to the option list
+     */
+    public $emptyOption = false;
+
+    /**
      * @inheritDoc
      */
     protected $defaultAlias = self::DEFAULT_ALIAS;
@@ -27,7 +38,9 @@ class AwesomeIconsList extends FormWidgetBase
     public function init()
     {
         $this->fillFromConfig([
-            'unicodeValue'
+            'unicodeValue',
+            'placeholder',
+            'emptyOption'
         ]);
     }
 
@@ -48,12 +61,23 @@ class AwesomeIconsList extends FormWidgetBase
     {
         $this->vars['field'] = $this->formField;
         $this->vars['unicodeValue'] = $this->unicodeValue;
+        $this->vars['placeholder'] = $this->placeholder;
+        $this->vars['emptyOption'] = $this->emptyOption;
+
+        $this->vars['value'] = $this->getLoadValue();
     }
 
     public function loadAssets()
     {
-        $this->addCss("https://use.fontawesome.com/releases/v5.6.3/css/all.css");
+        /** @var Settings $settings */
+        $settings = Settings::instance();
+
+        $this->addCss(
+            $settings->fontAwesomeLink(),
+            $settings->fontAwesomeLinkAttributes()
+        );
+
         $this->addCss("css/awesomeiconslist.css");
-        $this->addJs("js/awesomeiconslist.js");
     }
+
 }

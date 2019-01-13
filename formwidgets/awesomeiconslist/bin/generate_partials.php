@@ -69,19 +69,19 @@ foreach ($parsed as $iconName => $iconData) {
     foreach ($iconData['styles'] as $style) {
         if ($style === 'regular') {
             $count++;
-            $unicodeOptionsRegular .= sprintf($optionTemplate, "far fa-$iconName", $iconData['unicode'], $label);
+            $unicodeOptionsRegular .= sprintf($optionTemplate, "far fa-$iconName", "&#x" . $iconData['unicode'], $label);
             $classOptionsRegular .= sprintf($optionTemplate, "far fa-$iconName", "far fa-$iconName", $label);
         }
 
         if ($style === 'solid') {
             $count++;
-            $unicodeOptionsSolid .= sprintf($optionTemplate, "fas fa-$iconName", $iconData['unicode'], $label);
+            $unicodeOptionsSolid .= sprintf($optionTemplate, "fas fa-$iconName", "&#x" . $iconData['unicode'], $label);
             $classOptionsSolid .= sprintf($optionTemplate, "fas fa-$iconName", "fas fa-$iconName", $label);
         }
 
         if ($style === 'brands') {
             $count++;
-            $unicodeOptionsBrands .= sprintf($optionTemplate, "fab fa-$iconName", $iconData['unicode'], $label);
+            $unicodeOptionsBrands .= sprintf($optionTemplate, "fab fa-$iconName","&#x" . $iconData['unicode'], $label);
             $classOptionsBrands .= sprintf($optionTemplate, "fab fa-$iconName", "fab fa-$iconName", $label);
         }
     }

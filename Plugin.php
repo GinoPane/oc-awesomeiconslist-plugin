@@ -2,7 +2,9 @@
 
 namespace GinoPane\AwesomeIconsList;
 
+use GinoPane\AwesomeIconsList\Components\FontAwesomeCssLink;
 use GinoPane\AwesomeIconsList\FormWidgets\AwesomeIconsList;
+use GinoPane\AwesomeIconsList\Models\Settings;
 use System\Classes\PluginBase;
 
 /**
@@ -32,18 +34,40 @@ class Plugin extends PluginBase
         ];
     }
 
-    /**
-     * Boot method, called right before the request route
-     */
-    public function boot()
-    {
-
-    }
-
-    public function registerFormWidgets()
+    public function registerFormWidgets(): array
     {
         return [
             AwesomeIconsList::class => AwesomeIconsList::DEFAULT_ALIAS
+        ];
+    }
+
+    /**
+     * Register components
+     *
+     * @return  array
+     */
+    public function registerComponents(): array
+    {
+        return [
+            FontAwesomeCssLink::class => FontAwesomeCssLink::NAME,
+        ];
+    }
+
+    /**
+     * Register plugin settings
+     *
+     * @return array
+     */
+    public function registerSettings(): array
+    {
+        return [
+            'settings' => [
+                'label'       => self::LOCALIZATION_KEY . 'settings.name',
+                'description' => self::LOCALIZATION_KEY . 'settings.description',
+                'icon'        => self::DEFAULT_ICON,
+                'class'       => Settings::class,
+                'order'       => 100
+            ]
         ];
     }
 }
