@@ -8,13 +8,13 @@
  */
 function writePartial(string $fileName, string $unicodeOptionsRegular, string $unicodeOptionsSolid, string $unicodeOptionsBrands)
 {
-    $unicodeOptions = <<<OPTIONS
+    $options = <<<OPTIONS
 <optgroup label="Regular">$unicodeOptionsRegular</optgroup>
 <optgroup label="Solid">$unicodeOptionsSolid</optgroup>
 <optgroup label="Brands">$unicodeOptionsBrands</optgroup>
 OPTIONS;
 
-    if (file_put_contents("../partials/$fileName", $unicodeOptions) === false) {
+    if (file_put_contents("../partials/$fileName", $options) === false) {
         echo "Failed to write options to the $fileName\n";
         exit(1);
     }
