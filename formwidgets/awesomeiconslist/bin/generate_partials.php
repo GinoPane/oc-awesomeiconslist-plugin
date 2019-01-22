@@ -2,16 +2,16 @@
 
 /**
  * @param string $fileName
- * @param string $unicodeOptionsRegular
- * @param string $unicodeOptionsSolid
- * @param string $unicodeOptionsBrands
+ * @param string $optionsRegular
+ * @param string $optionsSolid
+ * @param string $optionsBrands
  */
-function writePartial(string $fileName, string $unicodeOptionsRegular, string $unicodeOptionsSolid, string $unicodeOptionsBrands)
+function writePartial(string $fileName, string $optionsRegular, string $optionsSolid, string $optionsBrands)
 {
     $options = <<<OPTIONS
-<optgroup label="Regular">$unicodeOptionsRegular</optgroup>
-<optgroup label="Solid">$unicodeOptionsSolid</optgroup>
-<optgroup label="Brands">$unicodeOptionsBrands</optgroup>
+<optgroup label="Regular">$optionsRegular</optgroup>
+<optgroup label="Solid">$optionsSolid</optgroup>
+<optgroup label="Brands">$optionsBrands</optgroup>
 OPTIONS;
 
     if (file_put_contents("../partials/$fileName", $options) === false) {
