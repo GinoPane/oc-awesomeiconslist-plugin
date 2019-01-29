@@ -1,6 +1,10 @@
+1.2.0:
+    - Updated to Font Awesome 5.7.0
+    - update_settings_to570.php
+
 1.1.0:
-  - Removed "bin" directory
+    - Removed "bin" directory
 
 1.0.0:
-  - The initial release of Awesome Icons List
-  - populate_default_settings.php
+    - The initial release of Awesome Icons List
+    - populate_default_settings.php

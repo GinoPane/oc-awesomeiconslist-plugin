@@ -31,7 +31,7 @@ class PopulateDefaultSettings extends Migration
     }
 
     /**
-     * Rollback Tags migration
+     * Remove settings
      */
     private function removeSettings()
     {
@@ -41,7 +41,7 @@ class PopulateDefaultSettings extends Migration
     }
 
     /**
-     * Create Tags table
+     * Add settings
      */
     private function addSettings()
     {

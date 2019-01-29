@@ -16,6 +16,11 @@ Types of changes
 
 ## [Unreleased]
 
+## 1.2.0 - 2019-01-29
+
+### Changed
+* Updated to Font Awesome 5.7.0.
+
 ## 1.1.0 - 2019-01-13
 
 ### Removed
@@ -26,4 +31,4 @@ Types of changes
 ### Features
 * The initial release of Awesome Icons List.
 
-[Unreleased]: https://github.com/GinoPane/oc-awesomeiconslist-plugin/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/GinoPane/oc-awesomeiconslist-plugin/compare/v1.2.0...HEAD
