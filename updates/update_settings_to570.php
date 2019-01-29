@@ -63,6 +63,8 @@ class UpdateSettingsTo570 extends Migration
         if (Schema::hasTable('system_settings')) {
             $currentSettings = DB::table('system_settings')->whereItem(Settings::SETTINGS_CODE)->pluck('value')->first();
 
+            $settings = [];
+
             $settings[Settings::FONTAWESOME_LINK_KEY ] = $link;
             $settings[Settings::FONTAWESOME_LINK_ATTRIBUTES_KEY] = $attributes;
 
