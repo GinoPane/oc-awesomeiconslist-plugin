@@ -1,25 +1,29 @@
 <?php
 
 /**
- * @param string $fileName
+ * @param string $type
  * @param string $optionsRegular
  * @param string $optionsSolid
  * @param string $optionsBrands
  */
-function writePartial(string $fileName, string $optionsRegular, string $optionsSolid, string $optionsBrands)
+function writePartials(string $type, string $optionsRegular, string $optionsSolid, string $optionsBrands)
 {
-    $options = <<<OPTIONS
-<optgroup label="Regular">$optionsRegular</optgroup>
-<optgroup label="Solid">$optionsSolid</optgroup>
-<optgroup label="Brands">$optionsBrands</optgroup>
-OPTIONS;
-
-    if (file_put_contents("../partials/$fileName", $options) === false) {
-        echo "Failed to write options to the $fileName\n";
+    if (file_put_contents("../partials/_{$type}_regular.htm", "<optgroup label=\"Regular\">$optionsRegular</optgroup>") === false) {
+        echo "Failed to write options to the _{$type}_regular.htm\n";
         exit(1);
     }
 
-    echo "Options were written successfully to the $fileName\n";
+    if (file_put_contents("../partials/_{$type}_solid.htm", "<optgroup label=\"Solid\">$optionsSolid</optgroup>") === false) {
+        echo "Failed to write options to the _{$type}_solid.htm\n";
+        exit(1);
+    }
+
+    if (file_put_contents("../partials/_{$type}_brands.htm", "<optgroup label=\"Brands\">$optionsBrands</optgroup>") === false) {
+        echo "Failed to write options to the _{$type}_brands.htm\n";
+        exit(1);
+    }
+
+    echo "Options were written successfully for the $type type\n";
 }
 
 $icons = file_get_contents("https://raw.githubusercontent.com/FortAwesome/Font-Awesome/master/metadata/icons.yml");
@@ -89,5 +93,5 @@ foreach ($parsed as $iconName => $iconData) {
 
 echo "Icons discovered: $count\n";
 
-writePartial("_unicodeoptions.htm", $unicodeOptionsRegular, $unicodeOptionsSolid, $unicodeOptionsBrands);
-writePartial("_classoptions.htm", $classOptionsRegular, $classOptionsSolid, $classOptionsBrands);
+writePartials("unicode", $unicodeOptionsRegular, $unicodeOptionsSolid, $unicodeOptionsBrands);
+writePartials("class", $classOptionsRegular, $classOptionsSolid, $classOptionsBrands);
