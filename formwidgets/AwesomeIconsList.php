@@ -12,10 +12,25 @@ class AwesomeIconsList extends FormWidgetBase
 {
     const DEFAULT_ALIAS = 'awesomeiconslist';
 
+    const ICON_TYPE_REGULAR = 'regular';
+    const ICON_TYPE_SOLID   = 'solid';
+    const ICON_TYPE_BRANDS  = 'brands';
+
+    private static $availableIconTypes = [
+        self::ICON_TYPE_REGULAR,
+        self::ICON_TYPE_SOLID,
+        self::ICON_TYPE_BRANDS
+    ];
+
     /**
      * @var bool Return unicode value for web font instead of valid CSS class
      */
     public $unicodeValue = false;
+
+    /**
+     * @var string Specific icon types. Possible values
+     */
+    public $iconTypes = '';
 
     /**
      * @var string Placeholder when no icon is selected
@@ -40,7 +55,8 @@ class AwesomeIconsList extends FormWidgetBase
         $this->fillFromConfig([
             'unicodeValue',
             'placeholder',
-            'emptyOption'
+            'emptyOption',
+            'iconTypes'
         ]);
     }
 
@@ -63,10 +79,14 @@ class AwesomeIconsList extends FormWidgetBase
         $this->vars['unicodeValue'] = $this->unicodeValue;
         $this->vars['placeholder'] = $this->placeholder;
         $this->vars['emptyOption'] = $this->emptyOption;
+        $this->vars['iconTypes'] = $this->parseIconTypes((string) $this->iconTypes);
 
         $this->vars['value'] = $this->getLoadValue();
     }
 
+    /**
+     * Loads component assets
+     */
     public function loadAssets()
     {
         /** @var Settings $settings */
@@ -77,7 +97,26 @@ class AwesomeIconsList extends FormWidgetBase
             $settings->fontAwesomeLinkAttributes()
         );
 
-        $this->addCss("css/awesomeiconslist.css");
+        $this->addCss('css/awesomeiconslist.css');
     }
 
+    /**
+     * @param string $iconTypes
+     *
+     * @return array
+     */
+    private function parseIconTypes(string $iconTypes): array
+    {
+        $types = array_intersect(
+            self::$availableIconTypes,
+            array_map(
+                function(string $value) {
+                    return strtolower(trim($value));
+                },
+                explode(",", $iconTypes)
+            )
+        );
+
+        return $types ?: self::$availableIconTypes;
+    }
 }

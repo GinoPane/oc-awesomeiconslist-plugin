@@ -1,35 +1,40 @@
 <?php
-	if (!empty($placeholder)) {
+    if (!empty($placeholder)) {
         $placeholder = e(trans($placeholder));
-	}
+    }
+
+    $partialPrefix = 'class';
+
+    if (!empty($unicodeValue)) {
+        $partialPrefix = 'unicode';
+    }
 ?>
 
-<select
-		class = "form-control custom-select"
-		id="<?= $field->getId(); ?>"
-		name="<?= $field->getName(); ?>"
-        <?php if (!empty($placeholder)): ?>data-placeholder="<?= e(trans($placeholder)) ?>"<?php endif ?>
->
-	<?php if (!empty($placeholder) || !empty($emptyOption)): ?>
-		<!--
-		October CMS has an issue with placeholders: https://github.com/octobercms/october/issues/4053
-		that's why we have to define an empty option here for placeholder
-		-->
-		<optgroup label="<?=e(trans('ginopane.awesomeiconslist::lang.formwidgets.awesomeiconslist.empty_label'))?>">
-			<option value="" selected="selected">
-				<?= !empty($placeholder) ? $placeholder : e(trans('ginopane.awesomeiconslist::lang.formwidgets.awesomeiconslist.empty_option')) ?>
-			</option>
-		</optgroup>
-	<?php endif; ?>
-    <?php if (isset($unicodeValue) && $unicodeValue): ?>
-        <?= $this->makePartial('unicodeoptions'); ?>
-    <?php else: ?>
-        <?= $this->makePartial('classoptions'); ?>
-    <?php endif; ?>
-</select>
+	<select
+			class = "form-control custom-select"
+			id="<?= $field->getId(); ?>"
+			name="<?= $field->getName(); ?>"
+            <?php if (!empty($placeholder)): ?>data-placeholder="<?= e(trans($placeholder)) ?>"<?php endif ?>
+	>
+        <?php if (!empty($placeholder) || !empty($emptyOption)): ?>
+			<!--
+            October CMS has an issue with placeholders: https://github.com/octobercms/october/issues/4053
+            that's why we have to define an empty option here for placeholder
+            -->
+			<optgroup label="<?=e(trans('ginopane.awesomeiconslist::lang.formwidgets.awesomeiconslist.empty_label'))?>">
+				<option value="" selected="selected">
+                    <?= !empty($placeholder) ? $placeholder : e(trans('ginopane.awesomeiconslist::lang.formwidgets.awesomeiconslist.empty_option')) ?>
+				</option>
+			</optgroup>
+        <?php endif; ?>
+
+        <?php foreach ($iconTypes as $type): ?>
+            <?= $this->makePartial("{$partialPrefix}_{$type}"); ?>
+        <?php endforeach; ?>
+	</select>
 
 <?php if (!empty($value)): ?>
 	<script>
-	    $("#<?= $field->getId(); ?> option[value='<?=$value;?>']").prop('selected', true);
+        $("#<?= $field->getId(); ?> option[value='<?=$value;?>']").prop('selected', true);
 	</script>
 <?php endif; ?>

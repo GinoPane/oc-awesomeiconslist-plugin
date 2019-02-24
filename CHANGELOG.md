@@ -15,6 +15,14 @@ Types of changes
 * **Security** in case of vulnerabilities.
 
 ## [Unreleased]
+    
+## 1.3.0 - 2019-02-24
+
+### Added
+* Added icon type setting
+
+### Changed
+* Updated to Font Awesome 5.7.2.
 
 ## 1.2.0 - 2019-01-29
 
@@ -31,4 +39,4 @@ Types of changes
 ### Features
 * The initial release of Awesome Icons List.
 
-[Unreleased]: https://github.com/GinoPane/oc-awesomeiconslist-plugin/compare/v1.2.0...HEAD
+[Unreleased]: https://github.com/GinoPane/oc-awesomeiconslist-plugin/compare/v1.3.0...HEAD

@@ -42,7 +42,8 @@ And in the code:
 
 * **unicodeValue** - by default, the selected icon will be returned as a valid ready-to-use Font Awesome class, like `far fa-thumbs-up`. Unicode value option tells the widget to return the value as unicode value like `&#xf164` ready-to-use with Font Awesome font family;
 * **emptyOption** - whether to add or not an empty option to the icons list, so you can basically select nothing;
-* **placeholder** - placeholder value which will be shown when nothing is selected.
+* **placeholder** - placeholder value which will be shown when nothing is selected;
+* **iconTypes** - allows you to specify font awesome icon types to be used in the list; available options are "regular", "solid", "brands"; all icons are returned if nothing set or in case of incorrect values.
 
 > Please note that at the moment of this writing October CMS has a bug related to the placeholder initialization and basically the placeholder won't work without an empty option, so when you set placeholder and empty option will be created automatically.
 
