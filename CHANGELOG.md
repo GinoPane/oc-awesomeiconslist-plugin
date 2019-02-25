@@ -16,7 +16,7 @@ Types of changes
 
 ## [Unreleased]
     
-## 1.3.0 - 2019-02-24
+## 1.3.0 - 2019-02-25
 
 ### Added
 * Added icon type setting
