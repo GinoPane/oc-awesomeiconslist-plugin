@@ -22,21 +22,21 @@ Types of changes
 * Added icon type setting
 
 ### Changed
-* Updated to Font Awesome 5.7.2.
+* Updated to Font Awesome 5.7.2
 
 ## 1.2.0 - 2019-01-29
 
 ### Changed
-* Updated to Font Awesome 5.7.0.
+* Updated to Font Awesome 5.7.0
 
 ## 1.1.0 - 2019-01-13
 
 ### Removed
-* Removed bin directory.
+* Removed bin directory
 
 ## 1.0.0 - 2019-01-13
 
 ### Features
-* The initial release of Awesome Icons List.
+* The initial release of Awesome Icons List
 
 [Unreleased]: https://github.com/GinoPane/oc-awesomeiconslist-plugin/compare/v1.3.0...HEAD
