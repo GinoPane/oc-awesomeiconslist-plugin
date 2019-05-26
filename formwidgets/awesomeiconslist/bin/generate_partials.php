@@ -8,17 +8,17 @@
  */
 function writePartials(string $type, string $optionsRegular, string $optionsSolid, string $optionsBrands)
 {
-    if (file_put_contents("../partials/_{$type}_regular.htm", "<optgroup label=\"Regular\">$optionsRegular</optgroup>") === false) {
+    if (file_put_contents("../partials/tmp/_{$type}_regular.htm", "<optgroup label=\"Regular\">$optionsRegular</optgroup>") === false) {
         echo "Failed to write options to the _{$type}_regular.htm\n";
         exit(1);
     }
 
-    if (file_put_contents("../partials/_{$type}_solid.htm", "<optgroup label=\"Solid\">$optionsSolid</optgroup>") === false) {
+    if (file_put_contents("../partials/tmp/_{$type}_solid.htm", "<optgroup label=\"Solid\">$optionsSolid</optgroup>") === false) {
         echo "Failed to write options to the _{$type}_solid.htm\n";
         exit(1);
     }
 
-    if (file_put_contents("../partials/_{$type}_brands.htm", "<optgroup label=\"Brands\">$optionsBrands</optgroup>") === false) {
+    if (file_put_contents("../partials/tmp/_{$type}_brands.htm", "<optgroup label=\"Brands\">$optionsBrands</optgroup>") === false) {
         echo "Failed to write options to the _{$type}_brands.htm\n";
         exit(1);
     }
