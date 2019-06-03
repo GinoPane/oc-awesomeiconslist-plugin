@@ -16,6 +16,11 @@ Types of changes
 
 ## [Unreleased]
 
+## 1.3.3 - 2019-06-03
+
+### Fixed
+* Fixed README
+
 ## 1.3.2 - 2019-05-26
 
 ### Changed
@@ -49,4 +54,4 @@ Types of changes
 ### Features
 * The initial release of Awesome Icons List
 
-[Unreleased]: https://github.com/GinoPane/oc-awesomeiconslist-plugin/compare/v1.3.2...HEAD
+[Unreleased]: https://github.com/GinoPane/oc-awesomeiconslist-plugin/compare/v1.3.3...HEAD
