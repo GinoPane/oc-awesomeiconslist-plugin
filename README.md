@@ -18,12 +18,12 @@ You may ask "Why do I need this plugin if October CMS itself has icon list in th
 Awesome Icons List registers a new backend form widget named `awesomeiconslist` with all available links. Usage example via `yaml` config:
 
     awesome_icon:
-        label: Icon,
-        type: awesomeiconslist,
-        unicodeValue: false,
-        emptyOption: false,
-        iconTypes: brands,
-        placeholder: Select Icon,
+        label: Icon
+        type: awesomeiconslist
+        unicodeValue: false
+        emptyOption: false
+        iconTypes: brands
+        placeholder: Select Icon
         span: left
 
 And in the code:
