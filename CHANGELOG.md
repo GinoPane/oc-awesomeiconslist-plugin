@@ -16,6 +16,11 @@ Types of changes
 
 ## [Unreleased]
 
+## 1.3.5 - 2019-12-23
+
+### Changed
+* Updated to Font Awesome 5.12.0
+
 ## 1.3.4 - 2019-06-08
 
 ### Changed
