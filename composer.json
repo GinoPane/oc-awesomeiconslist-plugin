@@ -1,5 +1,5 @@
 {
-  "name": "ginopane/oc-awesomeiconslist-plugin",
+  "name": "ginopane/awesomeiconslist-plugin",
   "type": "october-plugin",
   "description": "The latest Font Awesome icons list as a backed form widget",
   "homepage": "https://github.com/GinoPane/oc-awesomeiconslist-plugin",
